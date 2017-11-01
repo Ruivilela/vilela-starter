@@ -1,5 +1,5 @@
 const State = {
-  app: "loading"
+  value: 0
 }
 
 export default State

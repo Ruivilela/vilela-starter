@@ -1,19 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
-import store from './../state/store.js'; 
+import { Provider } from 'react-redux';
+import { HashRouter } from 'react-router-dom';
+import store from '@state/store.js';
+
+import MainRouter from './router-components/main-router/index'; 
 
 const App = () => {
   return(
     <div>
-      Hello world!
+      <MainRouter /> 
     </div>
   )
 }
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <HashRouter>
+      <App />
+    </HashRouter>
   </Provider>,
   document.getElementById('app')
 )
