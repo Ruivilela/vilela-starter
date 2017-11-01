@@ -6,9 +6,12 @@ export default class Counter extends Component {
   render() {
     return(
       <div>
-        <h1 style={style.counter}>
+        <h1 style={style.title}> 
+          Welcome to my counter!
+        </h1> 
+        <h2 style={style.counter}>
           {this.props.counter.value}
-        </h1>
+        </h2>
         <div className="row">
           <div className="col-md-2 col-md-offset-4">
             <CounterButton

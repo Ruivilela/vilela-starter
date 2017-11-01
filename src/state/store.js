@@ -10,6 +10,11 @@ const allReducers = combineReducers({
   counter: counterReducer
 })
 
-const store = createStore(allReducers) 
+const store = process.env.NODE_ENV === 'production' ?
+  createStore(allReducers) : 
+  createStore(
+    allReducers, 
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() 
+  );
 
 export default store

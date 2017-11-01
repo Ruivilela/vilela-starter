@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node ./server/app.js",
     "build": "cross-env NODE_ENV=production webpack --config ./webpack.prod.config.js --progress --colors",
     "dev": "webpack-dev-server --progress --inline --hot --open"
   },
@@ -21,6 +22,7 @@
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.24.1",
     "cross-env": "^5.1.1",
+    "express": "^4.16.2",
     "prop-types": "^15.6.0",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.2.2",
