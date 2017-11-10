@@ -9,4 +9,3 @@ export const DECREASE_COUNTER = () => {
     type: 'DECREASE_COUNTER'
   }
 };
-
