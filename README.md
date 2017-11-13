@@ -134,4 +134,40 @@ This allows you to create variables that you can access anywhere in your project
 
 ## Webpack dev configuration 
     - Hot module reloading
+    
+# Deploy 
+
+## Docker + Docker Cloud + AWS (the most difficult setup)
+
+- [Install docker](https://docs.docker.com/engine/installation/)
+- create a Docker account
+
+In your project run:
+
+```
+docker build -t react-docker .
+```
+
+After the docker image is finishing building, enter in to your [docker hub account](https://hub.docker.com/).
+Create a repository in the docker hub and name it.
+
+Then in your project terminal run:
+```
+docker login
+```
+You'll be prompted to insert your docker account credentials
+```
+docker push yourdockeracountname/repositoryname:descriptive_name
+```
+
+After this step is finished, create an aws account. After your account is created go to [IAM](https://aws.amazon.com/iam/). 
+When you're logged into the IAM console on your left there is a sidebar select "Roles". 
+A menu will appear and click on "create role". 
+A new menu will prompt and select Another AWS Account. There will be a field asking for account ID, insert the following id 689684103426.
+As an option select *"Require external ID (Best practice when a third party will assume this role)"* and insert in the *"External ID"* field your docker account name and then procceed. As a final step add the following [custom policy](https://gist.github.com/Ruivilela/67e0dfe578fa4d4017b634d6a024d89d) and you are done with creatin your role.   
+
+
+
+
+
 
